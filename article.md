@@ -59,15 +59,6 @@ _Containers communicating with each other._
 _Docker Compose simplifies multi-container applications by defining services in a `docker-compose.yml` file_
 
 
-✔ A **default bridge network** for services in the same Compose project.
-
-
-✔ **Named networks** to explicitly control container communication.
-
-
-✔ **Aliases** for easy service discovery (e.g., `db` for a database container).
-
-
 🛠 **Example (`docker-compose.yml`):**
 ```yaml
 version: "3"
@@ -95,20 +86,3 @@ networks:
 
 # Why is better?
 # <img src="image-2.png" alt="alt text" width="300"/>
-
-
-
-### **Explanation of the Diagram:**
-1. **Frontend Network**:
-   - The `WebApp` container is part of a **frontend network** (public-facing).
-   - It can send requests to the `API` service.
-
-2. **Backend Network**:
-   - The `API` service and `Database` are part of an **internal network**.
-   - The `WebApp` **cannot communicate** with the `Database` directly (security layer).
-   - Only the `API` can access the `Database`, ensuring proper access control.
-
-🔒 **Security Benefit:**
-By splitting networks, the database remains **isolated from external access**, reducing attack risks.
-
-Let me know if you need any tweaks! 🚀
